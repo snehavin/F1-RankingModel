@@ -86,8 +86,8 @@ In order to predict 2025 races outcomes, use the src/predictions_2025.ipynb note
 ## Installing
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/job-search-chatbot.git
-cd F1Project
+git clone https://github.com/snehavin/F1-RankingModel.git
+cd F1-RankingModel
 ```
 
 2. Install dependencies

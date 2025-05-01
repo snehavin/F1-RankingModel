@@ -55,23 +55,23 @@ The code used to train the model can be found in the src/model.ipynb notebook. T
 ## Metrics and Model Performance
 The model was evaluated using Normalized Discounted Cumulative Gain (NDCG), Spearman's Rank Correlation, Mean Reciprocal Rank, and Top-K Precision/Recall/F1 scores. These metrics were chosen as they are widely used for ranking and recommendation systems, and are well-suited to evaluate ranking models.
 
-**Normalized Discounted Cumulative Gain (NDCG)**
-Measures the quality ranking by giving more weight to the correct placement of top drivers.
+- **Normalized Discounted Cumulative Gain (NDCG)**
+    - Measures the quality ranking by giving more weight to the correct placement of top drivers.
     - **Average NDCG: 0.922**
     - A score close to 1.0 indicates that the model is ranking the top drivers accurately.
 
-**Spearman's Rank Correlation**
-Evaluates how well the predicted ranking order matches the actual finishing order.
+- **Spearman's Rank Correlation**
+    - Evaluates how well the predicted ranking order matches the actual finishing order.
     - **Average SRC: 0.613**
     - A value above 0.6 indicates a moderate to strong correlation between the predicted and actual order. 
 
-**Mean Reciprocal Rank (MRR)**
-Calculates the average of reciprocal ranks of the winner.
+- **Mean Reciprocal Rank (MRR)**
+    - Calculates the average of reciprocal ranks of the winner.
     - **Mean Reciprocal Rank: 0.7**
     - A score of 0.70 means that, on average, the actual race winner was ranked highly by the model, usually among the top 2 predictions. In a Formula 1 context, this indicates a strong performance by the model. Predicting the race winner is crucial because of the significant point different between the winner and the rest of the drivers. 
 
-**Top-K Precision / Recall / F1 Score**
-Measures how well the model predicts the top drivers (Winner, Top 3, Top 10)
+- **Top-K Precision / Recall / F1 Score**
+    - Measures how well the model predicts the top drivers (Winner, Top 3, Top 10)
     - **Winner Precision/Recall/F1: 0.538**
     - **Top 3 Precision/Recall/F1: 0.675**
     - **Top 10 Precision/Recall/F1: 0.774**
@@ -103,11 +103,14 @@ pip install -r requirements.txt
 
 
 ## Limitations & Future Improvements
+
 While the model demonstrates stong performance on 2019-2024 data, there are several limitations and opportunities for future improvement.
+
     - **Formula 1 Uncertainty**: There is so much data that Formula 1 race engineers utilize to make predictions and inform racing strategy. Though this model uses a variety of data across qualifying, telemetry, and weather factors, there are racing circumstances that cannot be captured including crashes, driver errors, safety cars, unexpected weather changes, etc. 
     - **Changes with 2025 Season**: The 2025 Formula 1 season has introduced numerous changes in driver lineups, car performance, and regulations that were not seen in the training data from 2019-2024. This introduces additional uncertainty when making predictions on currect races.
 
 Future Improvements:
+
     - Implement automated retraining after each race to continuously improve predictions and introduce 2025 data to the model.
     - Incorporate additional data from FastF1 including tire compound data, pit strategy, etc.
 
